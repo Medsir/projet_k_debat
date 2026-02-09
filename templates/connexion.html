@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/connexion.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+
+
+<body>
+        <div class="header">
+            <a class="header_link" href="/">RETOUR À L'ACCUEIL</a>
+        </div>
+
+        <div class="login">
+                <form method="post" class="login_form">
+                    <p class="titleConnextion">Connexion<br> K</p>
+                    <div class="login_form">
+                        <input type="email" id="email" name="email" class="input" autocomplete="off" placeholder="Entrez votre email" required>
+                    </div>
+                    <div>
+                        <input type="password" id="password" name="password" class="input" autocomplete="off" placeholder="Entrez votre mot de passe" required>
+                    </div>
+                        <!--<span class="page-link-label">Mot de passe oublié ?</span>!-->
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                {% if category == "success" %}
+                                    <div class="create_succes">
+                                        {{ message }}
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <p></p>
+                        <button type="submit" class="btn">Se connecter</button>
+                    <div class="pasDeCompte"><p class="sign-up-label">Pas de compte ? <span class="sign-up-link"><br><a href="create">S'inscrire</a></span></p></div>
+                    
+                </form>
+        </div>
+
+</body>
+</html>

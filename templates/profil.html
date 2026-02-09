@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/profil.css')}}">
+</head>
+<body>
+<div class="background">
+        <div class="container_main">
+            <div class="header">
+                <a class="header_link1" href="/">ACCUEIL</a>
+                <a class="header_link1" href="disconnect">DECONNEXION</a>   
+            </div>
+        </div>
+
+    <div class="content">
+    <div class="profile-container">
+            <img class="profile_icon" src="/static/avatars/{{session['id']}}.jpg">
+
+            <h1>{{data["username"]}}</h1>
+            <p class="level">NIVEAU {{data["niveau"]}}</p>
+    </div>
+     
+    <div class="stats-container">
+            <div class="stat-card">
+                <h3 class="lvl">PARTIES TERMINÉES</h3>
+                <p class="lvl">{{data["nb_parties"]}}</p>
+            </div>
+            <div class="stat-card">
+                <h3 class="lvl">RANG GLOBAL</h3>
+                <p class="lvl">{{data["rang"]}}</p>
+            </div>
+            <div class="stat-card">
+                <h3 class="lvl">RATIO VICTOIRES CLASSIQUE</h3>
+                <p class="lvl">{{data["nb_victoires_classique"]}}</p>
+            </div>
+            <div class="stat-card">
+                <h3 class="lvl">NOMBRE VICTOIRES TOURNOI</h3>
+                <p class="lvl">{{data["nb_victoires_tournois"]}}</p>
+            </div>
+            <div class="stat-card">
+                <h3 class="lvl">SCORE TOTAL</h3>
+                <p class="lvl">{{data["score_total"]}}</p>
+            </div>
+            <div class="stat-card">
+                <h3 class="lvl">AUTRE STATS</h3>
+                <p class="lvl">?</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="edit_profile">
+        <button class="edit_button" onclick="location.href='edit_profile'">Modifier le profil</button>
+    </div>
+</div>
+</body>
+</html>

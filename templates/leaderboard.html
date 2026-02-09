@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Accueil</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='leaderboard.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+
+<body class="leaderboard_body">
+    <div class="header">
+        
+        <a class="header_link" href="/"> ACCUEIL</a>
+        <a class="header_link" href="howtoplay">COMMENT JOUER ?</a>
+        <a class="header_link" href="/">FONDATEURS</a>
+       
+        {% if avatar != NULL: %}
+        <a href="profil"><img class="profile_button" src="/static/avatars/{{avatar}}.jpg"></a>
+        {% else %}
+        <a href="profil"><img class="profile_button" src="/static/avatars/default.jpg"></a>
+        {% endif %}
+    </div>
+
+    <div class="container_main">
+
+        <div class="leaderboard_container">
+            <div class="leaderboard">
+                <h1 class="leaderboard_title">  LEADERBOARD  </h1>
+
+                {% for i in iter_liste[:7] %}
+                    {% if i == 0 : %}
+                    <div class="bottom_top">
+                        <p class="rank"> 🥇{{i+1}} </p>
+                        <p class="user_name">{{leaderboard[i][1]}}</p>
+                        <p class="score"> Score : {{leaderboard[i][0]}}</p>
+                    </div>
+                    {% elif i == 1 %}
+                    <div class="bottom_top">
+                        <p class="rank"> 🥈{{i+1}} </p>
+                        <p class="user_name">{{leaderboard[i][1]}}</p>
+                        <p class="score"> Score : {{leaderboard[i][0]}}</p>
+                    </div>
+                    {% elif i == 2 %}
+                    <div class="bottom_top">
+                        <p class="rank"> 🥉{{i+1}} </p>
+                        <p class="user_name">{{leaderboard[i][1]}}</p>
+                        <p class="score"> Score : {{leaderboard[i][0]}}</p>
+                    </div>
+                    {% else %}
+                    <div class="bottom_top">
+                        <p class="rank"> {{i+1}} </p>
+                        <p class="user_name">{{leaderboard[i][1]}}</p>
+                        <p class="score"> Score : {{leaderboard[i][0]}}</p>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        </div>
+
+    
+    
+    
+
+</body>
+
+
+
+</html>

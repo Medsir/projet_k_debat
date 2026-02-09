@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Accueil</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='classic_games.css')}}">
+</head>
+
+<body>
+
+    <main>
+        <div>
+            <h2> Parties Disponibles </h2>
+            {% for game in gamelist %}
+                <div class="partie">
+                <p class="theme"> Theme : "{{themes[game.thematiqueID]}}"</p> 
+                <button class="join" onclick=onclick=location.href="/game/{{game.id}}"> rejoindre </button>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+
+</body>

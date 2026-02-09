@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Creation de Compte</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/styles_create.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+
+
+<body>
+    
+    <div class="header">
+        <a class="header_link" href="/">RETOUR À L'ACCUEIL</a>
+    </div>
+            <div class="create">
+            <p class="create_title">Créez votre compte</p>
+                <form method="post" class="create_form">
+                    <div class="create_form">
+                        <input type="username" id="username" name="username" class="input" autocomplete="off" placeholder="Entrez pseudo" required>
+                    </div>
+                    <div class="create_form">
+                        <input type="email" id="email" name="email" class="input" autocomplete="off" placeholder="Entrez votre email" required>
+                    </div>
+                    <div class="create_form">
+                        <input type="password" id="password" name="password" class="input" autocomplete="off" placeholder="Entrez votre mot de passe" required>
+                    </div>
+                    <div>
+                    {% if error == "Exception_Vide": %}
+                    <p class="create_error">Veuillez completer toutes les cases</p>
+                    {% endif %}
+                    {% if error == "Exception_Deja": %}
+                    <p class="create_error">Pseudo/email déjà utilisé</p>
+                    {% endif %}
+                    </div>
+                    <p></p>
+                        <button type="submit" class="btn" href="connexion">Créer</button>
+                    <div class="DéjaCompte"><p class="sign-up-label">Deja un compte ? <br><span class="sign-up-link"><a href="connexion">Se Connecter</a></span></p></div>
+                    
+                </form>
+            </div>
+</body>
+</html>

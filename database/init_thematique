@@ -1,0 +1,4 @@
+CREATE TABLE thematique (
+    id_thematique INTEGER PRIMARY KEY AUTOINCREMENT,
+    nom_thematique TEXT
+);

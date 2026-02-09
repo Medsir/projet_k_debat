@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accueil</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='style_main.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="bg">
+<div class="parallax">
+
+    <div class="haut_de_page">
+        <div class="container_main">
+            <div class="header">
+
+
+                <a class="header_link" href="howtoplay">COMMENT JOUER ?</a>
+                <a class="header_link" href="leaderboard">CLASSEMENT</a>
+                <a class="header_link" href="#fondateurs_section">FONDATEURS</a>
+
+                
+                {% if avatar != NULL: %}
+                <a href="profil"><img class="profile_button" src="/static/avatars/{{avatar}}.jpg"></a>
+                {% else %}
+                <a href="profil"><img class="profile_button" src="/static/avatars/default.jpg"></a>
+                {% endif %}
+                
+
+
+            </div>
+            
+            <!-- Gap entre le header et le texte -->
+            <!----->
+            <div class="main_desc">
+                <p class="desc_title">PROJET K</p>
+                <h1 class="desc_text">MONTREZ VOTRE TALENT<br> D'ORATEUR</h1>
+            </div>
+
+            <div class="play_button_container">
+                <button class="play_button" onclick="location.href='startplaying'">
+                    <div class="play_button_box">JOUER</div>
+                </button>
+            </div>
+
+        </div>
+
+</div>
+</div>
+
+<div class="infos">
+    <div class="space"></div>
+    <section class="fondateurs" id="fondateurs_section">
+        <div class="fonda_container">
+
+        </div>
+
+    </section>
+
+    <section class="leaderboard_section">
+        
+
+        <div class="leaderboard">
+            <h1>Leaderboard</h1>
+        {% for i in iter_liste %}
+            {% if i == 0 : %}
+            <p> 🥇 Top {{i+1}} : {{leaderboard[i][1]}} | Score : {{leaderboard[i][0]}}</p>
+            {% elif i == 1 %}
+            <p> 🥈 Top {{i+1}} : {{leaderboard[i][1]}} | Score : {{leaderboard[i][0]}}</p>
+            {% elif i == 2 %}
+            <p> 🥉 Top {{i+1}} : {{leaderboard[i][1]}} | Score : {{leaderboard[i][0]}}</p>
+            {% else %}
+            <p> Top {{i+1}} : {{leaderboard[i][1]}} | Score : {{leaderboard[i][0]}}</p>
+            {% endif %}
+        {% endfor %}
+        </div>
+    </section>
+    
+</div>
+
+</div>
+
+</body>
+
+
+
+</html>
