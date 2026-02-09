@@ -1,0 +1,19 @@
+# Ignorer les fichiers Python compilés
+__pycache__/
+*.pyc
+
+# Ignorer les fichiers d'environnement virtuel
+.venv/
+.env
+venv/
+env/
+
+# Ignorer les fichiers de logs
+logs/
+*.log
+
+# Ignorer les fichiers de base de données temporaires
+*.sqlite3
+
+#ignorer les fichiers cacher mac
+.DS_Store
