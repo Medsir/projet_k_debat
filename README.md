@@ -19,15 +19,16 @@ Un tournoi opposera 8 à 16 joueurs, toujours dans le format d'un affrontement e
     > pip install flask
     > pip install sqlite3
     ```
-
-2. Lancer le programme **main.py**
+2. Créer un fichier keyfile.txt et y inscrire une clé d'API personalisée 
+   
+4. Lancer le programme **main.py**
     ```
     > python3 main.py
     ```
 
-3. Ouvrir ``localhost:5000`` dans un navigateur
+5. Ouvrir ``localhost:5000`` dans un navigateur
 
-4. En cas de problème :
+6. En cas de problème :
     - Vérifier l'installation de Flask
     - Vérifier keyfile.txt
     - Initialiser la base de données [(comment faire ?)](#initialiser-la-base-de-données-si-besoin)
@@ -62,3 +63,4 @@ Un tournoi opposera 8 à 16 joueurs, toujours dans le format d'un affrontement e
 - MACCARONE-SAURET Antoine
 - HALILOU Yanis
 - LI Kun
+
